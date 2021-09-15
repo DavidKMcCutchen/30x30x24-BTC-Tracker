@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@bitcoin/api-interfaces';
+
 
 @Component({
   selector: 'bitcoin-root',
@@ -8,6 +7,9 @@ import { Message } from '@bitcoin/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title= 'Bitcoin Price';
+  links= [
+    {path: '', icon: 'home', title: 'Home'},
+    {path: 'v1/bpi/currentprice.json', icon: 'view_list', title: 'Bitcoin Price'}
+  ]
 }

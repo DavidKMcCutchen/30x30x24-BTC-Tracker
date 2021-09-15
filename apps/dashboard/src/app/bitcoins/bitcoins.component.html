@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <bitcoin-bitcoin-list
+        [usds]="allBitcoins$ | async"
+        (selected)="selectUSD($event)"
+        (deleted)="deleteUSD($event)"
+        (bitcoinViewed)="viewUSD($event)"
+      ></bitcoin-bitcoin-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <bitcoin-bitcoin-details
+        [usd]="selectedBitcoin$ | async"
+        (saved)="saveUSD($event)"
+        (cancelled)="resetBitcoin()"
+        [form]="form"
+      ></bitcoin-bitcoin-details>
+    </div>
+  </div>

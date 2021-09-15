@@ -1,0 +1,94 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="currentBitcoin.rate; else elseBlock">{{
+          originalTitle
+        }}</span>
+        <ng-template #elseBlock>Create a USD BTC Profile</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="save(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Code</mat-label>
+        <input
+          matInput
+          placeholder="Code"
+          formControlName="code"
+          type="text"
+          name="code"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Symbol</mat-label>
+        <input
+          matInput
+          placeholder="Symbol"
+          formControlName="symbol"
+          type="text"
+          name="symbol"
+        />
+      </mat-form-field>
+
+      
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label>Rate</mat-label>
+          <input
+            matInput
+            placeholder="Rate"
+            formControlName="rate"
+            type="text"
+            name="rate"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label>Description</mat-label>
+          <input
+            matInput
+            placeholder="Description"
+            formControlName="description"
+            type="text"
+            name="description"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label>Rate Float</mat-label>
+          <input
+            matInput
+            placeholder="Rate Float"
+            formControlName="rate_float"
+            type="text"
+            name="rate_float"
+          />
+        </mat-form-field>
+
+      
+
+
+
+
+      <section class="full-width">
+      </section>
+
+      
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">
+        {{ originalTitle ? 'Save' : 'Create' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

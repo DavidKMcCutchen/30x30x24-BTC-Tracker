@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Bitcoin Price Listing</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let usd of usds" data-test="planet-list-item" (click)="selected.emit(usd)">
+        <h3 matLine>{{usd.code}}</h3>
+        <p matLine> Symbol: {{usd.symbol}}</p>
+        <p matLine> Rate: {{usd.rate}}</p>
+        <p matLine> Description: {{usd.description}}</p>
+        <p matLine> Rate Float: {{usd.rate_float}}</p>
+        
+        <button mat-icon-button (click)="bitcoinViewed.emit(usd.rate); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">chevron_left</mat-icon>
+        </button>
+
+
+        <button mat-icon-button (click)="deleted.emit(usd); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

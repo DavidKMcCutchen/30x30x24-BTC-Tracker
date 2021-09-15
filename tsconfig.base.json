@@ -13,9 +13,17 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "@bitcoin/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@bitcoin/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@bitcoin/core-data": ["libs/core-data/src/index.ts"],
+      "@bitcoin/core-state": ["libs/core-state/src/index.ts"],
+      "@bitcoin/environment": ["libs/environment/src/index.ts"],
+      "@bitcoin/material": ["libs/material/src/index.ts"],
+      "@bitcoin/theme": ["libs/theme/src/index.ts"],
+      "@bitcoin/ui-login": ["libs/ui-login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
